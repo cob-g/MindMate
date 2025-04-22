@@ -1,0 +1,163 @@
+html {
+  scroll-behavior: smooth;
+  
+}
+
+html, body {
+  overflow-x: hidden;
+}
+/* * {
+    border: 2px solid red;
+} * */
+
+:root {
+    --primary-color: #1E3A8A; /* Blue */
+    --secondary-color: #2563EB; /* Light Blue */
+    --background-color: #FFFFFF; /* White */
+    --accent-color: #93C5FD; /* Soft Blue */
+
+    --dark-color: rgba(15, 26, 64, 1);
+  }
+
+  /* Smooth transitions for hover and focus */
+  * {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .scrolled {
+  background: linear-gradient(90deg, rgba(15, 26, 64, 1), rgba(0, 0, 0, 1));
+  transition: background-color 0.3s ease;
+  color: var(--primary-text-color); /* Adjust text color if needed */
+}
+
+
+  .scrolled-mobile {
+    background: linear-gradient(100deg, rgba(15, 26, 64, 1), rgba(0, 0, 0, 1));
+
+    transition: background-color 0.3s ease;
+  }
+
+
+
+
+.bg-custom-gradient {
+  background:linear-gradient(45deg, rgba(15, 26, 64, 0.9), rgba(0, 0, 0, 0.7));
+}
+
+.bg-custom-button {
+  background: linear-gradient(90deg, rgba(15, 26, 64, 0.9) 50%, rgba(255, 255, 255, .5) 100%);
+
+}
+
+.bg-custom-button-h {
+  background: linear-gradient(90deg, rgba(15, 26, 64, 1) 50%, rgba(255, 255, 255, 1) 100%);
+
+}
+
+
+
+
+
+
+
+
+
+/* Positioning each element in a specific corner */
+.absolute {
+    position: absolute;
+  }
+  
+  .top-0 {
+    top: 0;
+  }
+  
+  .right-0 {
+    right: 0;
+  }
+  
+  .bottom-0 {
+    bottom: 0;
+  }
+  
+  .left-0 {
+    left: 0;
+  }
+  
+  /* Opacity and animation classes */
+  .opacity-30 {
+    opacity: 0.3;
+  }
+  
+  .animate-movingY {
+    animation: movingY 5s infinite;
+  }
+
+  .animate-movingA {
+    animation: movingA 2s infinite;
+  }
+
+  .animate-rotating {
+    animation: rotating 5s infinite;
+  }
+  
+  .animate-scaleUp {
+    animation: scaleUp 5s infinite;
+  }
+  
+  /* Example animations */
+  @keyframes movingY {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes movingA {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(15px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes rotating {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes scaleUp {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Adjustments for icons if needed */
+  .text-6xl {
+    font-size: 4rem;
+  }
+  
+  .text-yellow-500 {
+    color: #fbbf24;
+  }
+
+  
+  

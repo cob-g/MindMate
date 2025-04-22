@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindMate</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+ 
+
+  <!-- aos -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- ------- Favicon -----
+  <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon"> -->
+
+  <!--------- Remix Icon ------->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" integrity="sha512-MqL4+Io386IOPMKKyplKII0pVW5e+kb+PI/I3N87G3fHIfrgNNsRpzIXEi+0MQC0sR9xZNqZqCYVcC61fL5+Vg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="text-gray-800">
+
+  <!-- Navbar -->
+  <!-- <nav id="navbar" class="fixed top-0 w-full bg-[var(--primary-color)] text-white shadow-lg z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold">MindMate</a>
+      <button id="menuToggle" class="lg:hidden text-2xl">
+        ☰
+      </button>
+      <ul id="navLinks" class="hidden lg:flex space-x-8">
+        <li><a href="#home" class="hover:text-[var(--accent-color)]">Home</a></li>
+        <li><a href="#features" class="hover:text-[var(--accent-color)]">Features</a></li>
+        <li><a href="#resources" class="hover:text-[var(--accent-color)]">Resources</a></li>
+        <li><a href="#contact" class="hover:text-[var(--accent-color)]">Contact</a></li>
+      </ul>
+    </div>
+
+    <ul id="mobileMenu" class="hidden lg:hidden fixed inset-0 bg-[var(--primary-color)] bg-opacity-90 backdrop-blur-md text-center space-y-4 py-10">
+      <li><a href="#home" class="block text-lg text-white hover:text-[var(--accent-color)]">Home</a></li>
+      <li><a href="#features" class="block text-lg text-white hover:text-[var(--accent-color)]">Features</a></li>
+      <li><a href="#resources" class="block text-lg text-white hover:text-[var(--accent-color)]">Resources</a></li>
+      <li><a href="#contact" class="block text-lg text-white hover:text-[var(--accent-color)]">Contact</a></li>
+    </ul>
+  </nav>  -->
+
+  <!-- Hero Section -->
+   
+  <header id="home" class="h-screen flex flex-col justify-center items-center 
+  text-white text-center px-6 relative bg-custom-gradient"  >
+  
+
+    <div id="navbar" class="fixed w-full top-0 left-0 z-50 text-white px-10 xl:px-5"  >
+
+      <nav class="container mx-auto flex items-center justify-between h-16 sm:h-20 " >
+
+        <div class="text-xl sm:text-2xl font-bold">MindMate</div>
+
+        <div id="nav-menu" class="absolute top-0 left-[-100%] min-h-[80vh] w-full bg-custom-gradient xl:bg-none sm:backdrop-blur-lg lg:backdrop-blur-none flex items-center justify-center duration-300 lg:static lg:min-h-fit lg:flex-row lg:w-auto" >
+          <ul class="flex flex-col gap-8 lg:flex-row font-bold text-lg">
+            <li>
+              <a href="#home" class="nav-link underline underline-offset-[9px] decoration-transparent hover:decoration-white decoration-[2px]">Home</a>
+            </li>
+            <li>
+              <a href="#features" class="nav-link underline underline-offset-[9px] decoration-transparent hover:decoration-white decoration-[2px]">Features</a>
+            </li>
+            <li>
+              <a href="#resources" class="nav-link underline underline-offset-[9px] decoration-transparent hover:decoration-white decoration-[2px]">Resources</a>
+            </li>
+            <li>
+              <a href="#contact" class="nav-link underline underline-offset-[9px] decoration-transparent hover:decoration-white decoration-[2px]">Contact</a>
+            </li>
+          </ul>
+          
+  
+          <div class="absolute top-0 -left-0 rotate-180 opacity-60 lg:hidden">
+            <img src="./img/icon4.png" alt="main-icon" class="w-32">
+          </div>
+
+          <div class="absolute -bottom-1 -right-0 opacity-60 lg:hidden">
+            <img src="./img/icon4.png" alt="main-icon" class="w-32">
+          </div>
+        </div>
+        
+        <div class="text-2xl sm:text-3xl cursor-pointer z-50 lg:hidden">
+          <i class="ri-menu-4-line" id="hamburger"></i>
+        </div>
+
+
+      </nav>
+    </div>
+
+
+     <!-- blog1 -->
+     <div class="w-64 h-64 bg-[var(--accent-color)] opacity-50 rounded-full  blur-3xl absolute z-50 top-[10%] left-[4rem] transform -translate-x-1/2 -translate-y-1/2"></div>
+
+     <!-- blog2 -->
+      <div class="w-64 h-64 bg-[var(--accent-color)] opacity-30  blur-3xl absolute z-50 bottom-0 right-0 "></div>
+
+    <!-- animated -->
+
+    <div class="w-full lg:w-1/2">
+      
+      <!-- leaf (top-right) -->
+      <div class="absolute top-100 right-500 animate-movingY hidden xl:block">
+        <i class="ri-mind-map text-6xl text-white opacity-30"></i>
+      </div>
+      
+      <!-- leaf (bottom-right) -->
+      <div class="absolute bottom-[5rem] right-[33rem] opacity-30 animate-movingY hidden xl:block">
+        <i class="ri-mind-map text-6xl text-white"></i>
+      </div>
+
+      <!-- leaf (bottom-right) -->
+      <div class="absolute top-[7rem] right-[20rem] opacity-30 animate-movingY hidden xl:block">
+        <i class="ri-mind-map text-6xl text-white"></i>
+      </div>
+
+      <!-- leaf (bottom-right) -->
+      <div class="absolute bottom-[15rem] right-[15rem] opacity-30 animate-movingY hidden xl:block">
+        <i class="ri-mind-map text-6xl text-white"></i>
+      </div>
+
+      <div class="absolute -top-[1rem] right-[45rem] opacity-30 animate-movingY hidden xl:block">
+        <i class="ri-mind-map text-6xl text-white"></i>
+      </div>
+
+    
+      <!-- flower (bottom-left) -->
+      <div class="absolute bottom-80 left-[15rem] opacity-30 animate-rotating hidden xl:block">
+        <i class="ri-contrast-2-line text-6xl text-white"></i>
+      </div>
+
+      <!-- flower (bottom-left) -->
+      <div class="absolute bottom-100 right-[10rem] opacity-30 animate-scaleUp hidden xl:block">
+        <i class="ri-puzzle-2-line text-6xl text-white"></i>
+      </div>
+    
+      <!-- plant (top-left) -->
+      <div class="absolute top-[180px] left-[200px] opacity-30 animate-scaleUp hidden xl:block">
+        <i class="ri-puzzle-2-line text-6xl text-white"></i>
+      </div>
+
+      <div class="absolute top-[130px] left-[50rem] opacity-30 animate-scaleUp hidden xl:block">
+        <i class="ri-puzzle-2-line text-6xl text-white"></i>
+      </div>
+    
+      
+    
+      <!-- flower (top-right) -->
+      <div class="absolute top-[5rem] right-50 opacity-30 animate-rotating hidden xl:block">
+        <i class="ri-contrast-2-line text-6xl text-white"></i>
+      </div>
+      
+      <!-- flower (top-right) -->
+      <div class="absolute bottom-[30rem] left-0 opacity-30 animate-rotating hidden xl:block">
+        <i class="ri-contrast-2-line text-6xl text-white"></i>
+      </div>
+
+      <!-- flower (top-right) -->
+      <div class="absolute top-[15rem] right-[43rem] opacity-30 animate-rotating hidden xl:block">
+        <i class="ri-contrast-2-line text-6xl text-white"></i>
+      </div>
+
+      <!-- flower (top-right) -->
+      <div class="absolute top-[20rem] right-[10rem] opacity-30 animate-rotating hidden xl:block">
+        <i class="ri-contrast-2-lineri-flower-line text-6xl text-white"></i>
+      </div>
+
+      <!-- flower (top-right) -->
+      <div class="absolute top-[1rem] right-[2rem] opacity-30 animate-rotating hidden xl:block">
+        <i class="ri-contrast-2-line text-6xl text-white"></i>
+      </div>
+    
+
+      <!-- plant (bottom-left) -->
+      <div class="absolute bottom-[10rem] left-0 opacity-30 animate-scaleUp hidden xl:block">
+        <i class="ri-puzzle-2-line text-6xl text-white"></i>
+      </div>
+
+      <!-- plant (bottom-left) -->
+      <div class="absolute bottom-[5rem] left-15 opacity-30 animate-scaleUp hidden xl:block">
+        <i class="ri-puzzle-2-line text-6xl text-white"></i>
+      </div>
+
+      <!-- plant (bottom-left) -->
+      <div class="absolute bottom-[25rem] right-[30rem] opacity-30 animate-scaleUp hidden xl:block">
+        <i class="ri-puzzle-2-line text-6xl text-white"></i>
+      </div>
+
+      <!-- flower (top-right) -->
+      <div class="absolute bottom-[5rem] left-[55rem] opacity-30 animate-rotating hidden xl:block">
+        <i class="ri-contrast-2-line text-6xl text-white"></i>
+      </div>
+
+      <!-- plant (bottom-left) -->
+      <div class="absolute bottom-[2rem] right-0 opacity-30 animate-scaleUp hidden xl:block">
+        <i class="ri-puzzle-2-line text-6xl text-white"></i>
+      </div>
+    
+    </div>
+    
+
+    
+    
+    <div  class="flex items-center mb-12" data-aos="fade-up"
+    data-aos-duration="1500" data-aos-anchor-placement="center-bottom">
+      <img src="./img/icon4.png" alt="icon" class="h-16" >
+
+      <h1 class="text-3xl font-bold">MindMate</h1>
+    </div>
+    <h1 data-aos="fade-up"
+    data-aos-duration="1500" data-aos-anchor-placement="center-bottom"class="text-5xl "><span class="font-extrabold">What's on your </span>Mind?</h1>
+    <!-- <p class="mt-4 text-lg text-[var(--accent-color)]">
+      Your AI-powered mental health companion.
+    </p> -->
+    <div class="mt-8 flex flex-col items-center space-y-2 w-full" data-aos="fade-up"
+    data-aos-duration="1500" data-aos-anchor-placement="center-bottom">
+      <!-- <div class="relative w-full max-w-lg">
+        <input
+          type="text"
+          placeholder="What can I help you with?"
+          class="w-full p-4 rounded-md text-gray-800 pr-12 sm:pr-20" 
+        />
+        <img 
+          src="./img/attach-file.png" 
+          alt="file" 
+          class="absolute top-1/2 right-2 -translate-y-1/2 h-6 cursor-pointer"
+        > 
+      </div> -->
+      <div class="w-full max-w-lg"> <!-- Button container matches input width -->
+        <button
+  class="text-white py-4 px-4 rounded-full w-full
+         bg-[linear-gradient(45deg,_rgba(15,_26,_64,_1)_70%,_rgba(255,_255,_255,_1)_100%)]
+         hover:scale-105 hover:shadow-lg hover:shadow-blue-500/40
+         transition-all duration-300 transform"
+  onclick="openChatSpace()"
+>
+  Start Chat
+</button>
+
+
+
+
+
+
+         <!-- arrow -->
+      <div class="flex justify-center items-center mt-12 animate-movingA">
+        <a href="#features">
+          <i class="ri-arrow-down-double-line text-5xl hover:text-"></i>
+        </a>
+      </div>
+
+      </div>
+
+      
+    </div>
+  </div>
+  
+    
+    
+    
+    
+  </header>
+
+<!-- Chat History Sidebar (Absolute)
+<div id="chat-history-sidebar" class="absolute left-0 top-0 w-80 h-full bg-white text-gray-800 z-30 shadow-lg overflow-y-auto p-4 hidden">
+  <div class="flex justify-between items-center mb-4">
+    <h2 class="text-xl font-semibold">Chat History</h2>
+    <button id="close-chat-history-sidebar" class="text-2xl">&times;</button>
+  </div>
+   -->
+  <!-- Chat History Content for Desktop
+  <div id="chat-history" class="space-y-4">
+    <div class="bg-gray-100 p-4 rounded-md">
+      <p class="font-semibold">User:</p>
+      <p class="text-sm">Hello, I need some help.</p>
+    </div>
+    <div class="bg-gray-100 p-4 rounded-md">
+      <p class="font-semibold">MindMate:</p>
+      <p class="text-sm">How can I assist you today?</p>
+    </div>
+    More messages here -->
+  <!-- </div>
+</div> -->
+
+
+
+  <!-- Features Section -->
+  <section id="features">
+    <div class="bg-white py-20 px-10 xl:px-60">
+
+      <div class="text-center" data-aos="zoom-in" data-aos-duration="4000">
+        <h2 class="text-4xl font-bold text-[var(--dark-color)]">Features</h2>
+        <p class="mt-4 text-lg text-gray-600">Enhancing mental health with powerful tools.</p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 p-3 md:p-8">
+         <!-- card 1 -->
+        <div data-aos="zoom-in"
+        data-aos-duration="1000" class="border border-green-900 p-5 cursor-pointer rounded-md hover:shadow-2xl hover:-translate-y-1 duration-300 space-y-5">
+         
+           <div class="flex gap-5 items-center">
+
+            <i class="ri-emotion-line text-3xl md:text-4xl xl:text-5xl"></i>
+
+            <p class="md:text-lg font-bold">Mood <br>
+              Tracker</p>
+            
+           </div>
+
+           <div>
+              <p class="font-Lobster">
+                Track your emotions daily to better understand your mental state.
+              </p>
+           </div>
+        </div>
+
+        <!-- card 2 -->
+        <div data-aos="zoom-in"
+        data-aos-duration="1000" class="border border-green-900 p-5 cursor-pointer rounded-md hover:shadow-2xl hover:-translate-y-1 duration-300 space-y-5">
+         
+          <div class="flex gap-5 items-center">
+
+           <i class="ri-git-repository-line text-3xl md:text-4xl xl:text-5xl"></i>
+
+           <p class="md:text-lg font-bold">Journaling <br>
+             Prompts</p>
+           
+          </div>
+
+          <div>
+             <p class="font-Lobster">
+              Structured prompts to guide your thoughts and provide clarity.
+             </p>
+          </div>
+       </div>
+
+      <!-- card 3 -->
+       <div data-aos="zoom-in"
+       data-aos-duration="1000" class="border border-green-900 p-5 cursor-pointer rounded-md hover:shadow-2xl hover:-translate-y-1 duration-300 space-y-5">
+         
+        <div class="flex gap-5 items-center">
+
+         <i class="ri-heart-add-fill text-3xl md:text-4xl xl:text-5xl"></i>
+
+         <p class="md:text-lg font-bold">Self Care <br>
+           Suggestions</p>
+         
+        </div>
+
+        <div>
+           <p class="font-Lobster">
+            Personalized self-care tips to help manage stress and anxiety.
+           </p>
+        </div>
+     </div>
+
+     <!-- <div data-aos="zoom-in"
+     data-aos-duration="1000" class="border border-green-900 p-5 cursor-pointer rounded-md hover:shadow-2xl hover:-translate-y-1 duration-300 space-y-5">
+         
+      <div class="flex gap-5 items-center">
+
+       <i class="ri-record-mail-line text-3xl md:text-4xl xl:text-5xl"></i>
+
+       <p class="md:text-lg font-bold">Daily <br>
+         Affirmation</p>
+       
+      </div>
+
+      <div>
+         <p class="font-Lobster">
+          Receive daily motivational affirmations to uplift your mood and mindset.
+         </p>
+      </div>
+   </div> -->
+      </div>
+    </div>
+
+    <!-- 
+    <div class="mt-12 grid gap-8 md:grid-cols-3">
+    
+      <div class="bg-[var(--accent-color)] p-6 rounded-lg shadow-md hover:scale-105">
+        <h3 class="text-2xl font-semibold text-[var(--primary-color)]">Journaling Prompts</h3>
+        <p class="mt-2">Structured prompts to guide your thoughts and provide clarity.</p>
+      </div>
+      <div class="bg-[var(--accent-color)] p-6 rounded-lg shadow-md hover:scale-105">
+        <h3 class="text-2xl font-semibold text-[var(--primary-color)]">Self-Care Suggestions</h3>
+        <p class="mt-2">Personalized self-care tips to help manage stress and anxiety.</p>
+      </div>
+    </div> -->
+  </section>
+
+  <!-- Resources Section -->
+  <section id="resources" class="flex flex-col justify-center  text-white px-6 sm:px-10 xl:px-60 py-20 mb-12 bg-custom-gradient" >     
+    <div class="text-center mb-12" data-aos="zoom-in" data-aos-duration="4000">       
+      <h2 class="text-3xl sm:text-4xl font-bold">Resources</h2>       
+      <p class="mt-6 text-lg sm:text-xl text-[var(--background-color)] font-light tracking-wider px-4 sm:px-10 max-w-3xl mx-auto leading-loose">
+        <span class="before:content-['"'] after:content-['"'] relative">Access curated mental health resources.</span>
+      </p>     
+    </div>     
+    <div class="container space-y-12">       
+      <!-- Item 1 -->       
+      <div data-aos="zoom-in" data-aos-duration="4000" class="flex flex-col items-center sm:flex-row gap-5">         
+        <div class="w-full sm:w-1/2">           
+          <img             
+            src="./img/therapist11.png"             
+            alt="Therapist Directory"             
+            class="w-1/2 max-w-xs sm:max-w-md mx-auto"           
+          />         
+        </div>         
+        <div class="w-full sm:w-1/2 text-center sm:text-left">           
+          <a href="https://philippinepsychiatricassociation.org/psychiatrist/" target="_blank" class="block">             
+            <h3 class="text-2xl font-semibold hover:underline decoration-white hover:decoration-white underline-offset-8">Therapist Directory</h3>           
+          </a>           
+          <p class="mt-4 text-slate-300">             
+            A curated directory that helps users find licensed mental health professionals in their area, enabling access             to personalized care and guidance.           
+          </p>         
+        </div>       
+      </div>              
+      <!-- Item 2 -->       
+      <div data-aos="zoom-in" data-aos-duration="4000" class="flex flex-col items-center sm:flex-row-reverse gap-5">         
+        <div class="w-full sm:w-1/2">           
+          <img             
+            src="./img/emergency-call.png"             
+            alt="National Helpline"             
+            class="w-1/2 max-w-xs sm:max-w-md mx-auto"           
+          />         
+        </div>         
+        <div class="w-full sm:w-1/2 text-center sm:text-left">           
+          <a href="https://mentalhealthph.org/help/" target="_blank" class="block">             
+            <h3 class="text-2xl font-semibold hover:underline decoration-white hover:decoration-white underline-offset-8">National Helpline</h3>           
+          </a>           
+          <p class="mt-4 text-slate-300">             
+            A direct connection to reliable helplines that provide immediate support during mental health crises. Available             24/7, these services ensure that help is always within reach when needed most.           
+          </p>         
+        </div>       
+      </div>       
+      <!-- Item 3 -->       
+      <div data-aos="zoom-in" data-aos-duration="4000" class="flex flex-col items-center sm:flex-row gap-5">         
+        <div class="w-full sm:w-1/2">           
+          <img             
+            src="./img/self.png"             
+            alt="Self-Help Guides"             
+            class="w-1/2 max-w-xs sm:max-w-md mx-auto"           
+          />         
+        </div>         
+        <div class="w-full sm:w-1/2 text-center sm:text-left">           
+          <a href="#"  class="block">             
+            <h3 class="text-2xl font-semibold hover:underline decoration-white hover:decoration-white underline-offset-8">Self-Help Guides</h3>           
+          </a>           
+          <p class="mt-4 text-slate-300">             
+            In-depth guides with actionable steps to help you navigate stress, anxiety, and emotional challenges while             building resilience and self-awareness.           
+          </p>         
+        </div>       
+      </div>     
+    </div>
+
+  </section>
+  
+  <section id="contact" class="bg-[var(--background-color)] px-6 py-12 lg:py-40 flex flex-col justify-center">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+      <!-- Contact Form -->
+      <div>
+        <h2 data-aos="zoom-in" class="text-3xl sm:text-4xl font-bold text-[var(--dark-color)] mb-6">Contact Us</h2>
+        <form class="space-y-6">
+          <input
+            data-aos="zoom-in"
+            data-aos-duration="4000"
+            type="text"
+            placeholder="Your Name"
+            class="w-full p-4 bg-gray-100 text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--secondary-color)]"
+          />
+          <input
+            data-aos="zoom-in"
+            data-aos-duration="4000"
+            type="email"
+            placeholder="Your Email"
+            class="w-full p-4 bg-gray-100 text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--secondary-color)]"
+          />
+          <textarea
+            data-aos="zoom-in"
+            data-aos-duration="4000"
+            placeholder="Your Message"
+            class="w-full p-4 bg-gray-100 text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--secondary-color)]"
+          ></textarea>
+          <button
+            data-aos="zoom-in"
+            data-aos-duration="4000"
+            class="w-full py-3 bg-[var(--dark-color)] text-white rounded-full hover:bg-[var(--secondary-color)] transition-all round"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+  
+      <!-- FAQs -->
+      <div>
+        <h2 data-aos="zoom-in"
+        data-aos-duration="4000" class="text-3xl sm:text-4xl font-bold text-[var(--dark-color)] mb-6">FAQs</h2>
+        <div class="faq-container space-y-4">
+          <!-- FAQ Item -->
+          <div class="faq-item bg-gray-100 p-6 rounded-lg shadow-md transition-shadow duration-300">
+            <h3 data-aos="zoom-in"
+            data-aos-duration="4000" class="faq-question text-lg font-semibold flex justify-between items-center cursor-pointer">
+              What is MindMate?
+              <span class="transform transition-transform duration-300">+</span>
+            </h3>
+            <div
+              class="faq-answer overflow-hidden max-h-0 transition-all duration-300"
+            >
+              <p data-aos="zoom-in"
+              data-aos-duration="4000" class="mt-2 text-[var(--dark-color)]">
+                MindMate is an AI-powered web application designed to provide mental health support, offering tools like
+                real-time conversations, mood tracking, and access to professional resources.
+              </p>
+            </div>
+          </div>
+          <!-- FAQ Item 2-->
+          <div
+            class="faq-item bg-gray-100 p-6 rounded-lg shadow-md transition-shadow duration-300"
+          >
+            <h3
+            data-aos="zoom-in"
+            data-aos-duration="4000"
+              class="faq-question text-lg font-semibold text-[var(--dark-color)] flex justify-between items-center cursor-pointer"
+            >
+              Is MindMate a replacement for therapy?
+              <span class="transform transition-transform duration-300">+</span>
+            </h3>
+            <div
+              class="faq-answer overflow-hidden max-h-0 transition-all duration-300"
+            >
+              <p data-aos="zoom-in"
+              data-aos-duration="4000" class="mt-2 text-[var(--dark-color)]">
+                No, MindMate complements professional therapy by offering tools for self-care and support but is not a
+                substitute for licensed mental health care.
+              </p>
+            </div>
+          </div>
+          <!-- FAQ Item 3 -->
+          <div
+            class="faq-item bg-gray-100 p-6 rounded-lg shadow-md transition-shadow duration-300"
+          >
+            <h3
+            data-aos="zoom-in"
+            data-aos-duration="4000" class="faq-question text-lg font-semibold text-[var(--dark-color)] flex justify-between items-center cursor-pointer"
+            >
+              How does MindMate ensure data privacy?
+              <span class="transform transition-transform duration-300">+</span>
+            </h3>
+            <div
+            class="faq-answer overflow-hidden max-h-0 transition-all duration-300"
+            >
+              <p class="mt-2 text-[var(--dark-color)]">
+                MindMate uses secure encryption methods and follows strict data protection protocols to ensure user data
+                remains confidential.
+              </p>
+            </div>
+          </div>
+          <!-- FAQ Item 4 -->
+          <div
+            class="faq-item bg-gray-100 p-6 rounded-lg shadow-md transition-shadow duration-300"
+          >
+            <h3
+            data-aos="zoom-in"
+            data-aos-duration="4000" class="faq-question text-lg font-semibold text-[var(--dark-color)] flex justify-between items-center cursor-pointer"
+            >
+              Can I use MindMate for free?
+              <span class="transform transition-transform duration-300">+</span>
+            </h3>
+            <div
+              class="faq-answer overflow-hidden max-h-0 transition-all duration-300"
+            >
+              <p data-aos="zoom-in"
+              data-aos-duration="4000" class="mt-2 text-[var(--dark-color)]">
+                Yes, the basic features of MindMate are free, with optional premium features for enhanced functionality and
+                access to additional resources.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  
+
+  <footer class=" text-white pt-20 pb-10 md:pt-28 relative bg-custom-gradient">
+
+    <!-- Social Icon -->
+    <div class="relative mb-16" data-aos="zoom-in"
+    data-aos-duration="4000">
+      <!-- Border Line -->
+      <div class="border-b border-white relative z-10"></div>
+      
+      <!-- Social Icons -->
+      <div class="absolute top-0 -translate-y-1/2 left-1/2 transform -translate-x-1/2 z-20" >
+        <div class="bg-[var(--dark-color)] text-center text-white text-lg space-x-3 py-3 px-6 rounded-full ">
+          <i class="ri-facebook-fill hover:text-black duration-300"></i>
+          <i class="ri-twitter-x-line hover:text-black duration-300 text-base"></i>
+          <i class="ri-instagram-line hover:text-black duration-300"></i>
+          <i class="ri-linkedin-fill hover:text-black duration-300"></i>
+        </div>
+      </div>
+    </div>
+    
+  
+    <!-- Content -->
+    <div class="relative flex flex-wrap gap-8 justify-center text-center md:justify-between md:text-left max-w-7xl mx-auto px-4">
+      <!-- Item 1 -->
+      <div>
+        <div class="inline-block">
+          <img data-aos="zoom-in"
+          data-aos-duration="4000" src="./img/icon4.png" alt="icon" class="h-24 mx-auto md:mx-0">
+          <p data-aos="zoom-in"
+          data-aos-duration="4000" class="font-Lobster text-xl sm:text-2xl mt-5"><b>MindMate</b></p>
+        </div>
+      </div>
+  
+      <!-- Quick Links -->
+      <div>
+        <p data-aos="zoom-in"
+        data-aos-duration="4000" class="font-bold mb-5 text-xl">Quick Links</p>
+        <div class="flex flex-col">
+          <a data-aos="zoom-in"
+          data-aos-duration="4000" href="#">Mind</a>
+          <a data-aos="zoom-in"
+          data-aos-duration="4000" href="#">Therapist</a>
+          <a data-aos="zoom-in"
+          data-aos-duration="4000" href="#">National Helpline</a>
+          <a data-aos="zoom-in"
+          data-aos-duration="4000" href="#">Self-Help</a>
+          <a data-aos="zoom-in"
+          data-aos-duration="4000" href="#">Empathy</a>
+        </div>
+      </div>
+  
+      <!-- Popular Services -->
+      <div>
+        <p data-aos="zoom-in"
+        data-aos-duration="4000" class="font-bold mb-5 text-xl">Popular Services</p>
+        <div class="flex flex-col">
+          <a data-aos="zoom-in"
+          data-aos-duration="4000"href="#">Mood Tracker</a>
+          <a data-aos="zoom-in"
+            data-aos-duration="4000" href="#">Journaling Prompt</a>
+          <a data-aos="zoom-in"
+            data-aos-duration="4000" href="#">Self-Care</a>
+          <a data-aos="zoom-in"
+            data-aos-duration="4000" href="#">Daily Affirmation</a>
+        </div>
+      </div>
+  
+      <!-- Contact Info -->
+      <div>
+        <p data-aos="zoom-in"
+            data-aos-duration="4000" class="font-bold mb-5 text-xl">Contact Us</p>
+        <div class="flex flex-col">
+          <a data-aos="zoom-in"
+            data-aos-duration="4000" href="tel:+88 333 78 901">+88 333 78 901</a>
+          <a data-aos="zoom-in"
+            data-aos-duration="4000" href="mailto:lightcodecamp@gmail.com">mindmate@gmail.com</a>
+          <br>
+          <p data-aos="zoom-in"
+            data-aos-duration="4000" >0909 California, King Solomon, Flying V 5400, USA</p>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Copyright -->
+    <div class="mt-10 text-center">
+      <p class="opacity-50">Copyright &copy; 2024 MindMate. All rights reserved.</p>
+    </div>
+  
+  
+  </footer>
+  
+
+  
+  <!-- Link the AOS library -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- Link your custom JavaScript file -->
+<script src="main.js"></script>
+
+<!-- Inline AOS initialization (if required) -->
+<script>
+  AOS.init();
+</script>
+</body>
+</html>

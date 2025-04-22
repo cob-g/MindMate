@@ -1,0 +1,245 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MindMate</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!--------- Remix Icon ------->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
+      integrity="sha512-MqL4+Io386IOPMKKyplKII0pVW5e+kb+PI/I3N87G3fHIfrgNNsRpzIXEi+0MQC0sR9xZNqZqCYVcC61fL5+Vg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Add Google Sign-In API -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <!-- Add Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div id="blur-overlay" class="blur-overlay"></div>
+
+        <!-- Chat History Sidebar -->
+        <div
+          id="history-container"
+          class="col-12 col-md-2 text-white p-3 montserrat"
+        >
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h4 class="mb-0 montserrat_title">MindMate</h4>
+            <button class="btn text-white py-1 px-2" onclick="hideHistory()">
+              <i class="ri-xrp-line"></i>
+            </button>
+          </div>
+
+          <div class="mb-4">
+            <button
+              id="new-chat-btn"
+              class="btn btn-outline-secondary text-white d-flex align-items-center w-100 mb-3 rounded-1 py-2"
+              onclick="newChat()"
+              disabled
+            >
+              <i class="bi bi-plus-circle me-2"></i> Start new chat
+            </button>
+
+            <div class="d-flex align-items-center mb-2">
+              <i class="bi bi-chat-fill me-2"></i>
+              <span>Chats</span>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <small class="text-secondary">Recents</small>
+          </div>
+
+          <ul id="history-list" class="list-unstyled">
+            <!-- History will be populated after login -->
+          </ul>
+        </div>
+
+        <i
+          class="openSidebar ri-sidebar-unfold-fill m-2"
+          onclick="showHistory()"
+        ></i>
+
+        <!-- Chat Interface -->
+        <div id="chat-container" class="col-12 col-md-10 flex-grow-1">
+          <div
+            class="d-flex align-items-center justify-content-between justify-content-md-center mb-3"
+          >
+            <button
+              class="btn d-md-none mobile-sidebar-btn"
+              onclick="showHistory()"
+            >
+              <i class="ri-menu-4-line"></i>
+            </button>
+            <!-- <div class="header-container d-flex align-items-center">
+                    <img src="/img/icon2.png" alt="my-icon" class="d-none img-fluid" style="width: 50px;"> 
+                    <h2 class="text-center mb-0 montserrat_title p-1">MindMate</h2>
+                </div> -->
+            <button
+              id="login-button"
+              class="btn btn-outline-light"
+              data-bs-toggle="modal"
+              data-bs-target="#loginModal"
+            >
+              <i class="ri-login-box-line me-2"></i>Sign Up
+            </button>
+          </div>
+
+          <div id="response">
+            <div
+              id="welcome-message"
+              class="welcome-container montserrat"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
+              <div
+                class="welcome-header"
+                data-aos="fade-down"
+                data-aos-delay="200"
+              >
+                <h3>Welcome to MindMate</h3>
+              </div>
+              <div
+                class="welcome-content"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
+                <p>
+                  Hi there! I'm your MindMate, a friendly AI companion ready to
+                  listen and support you.
+                </p>
+                <p class="text-muted">Please login to start chatting.</p>
+              </div>
+              <div
+                class="welcome-suggestions"
+                data-aos="fade-up"
+                data-aos-delay="600"
+              >
+                <p>Here are some ways I can help:</p>
+                <div class="suggestion-buttons">
+                  <button
+                    class="suggestion-btn"
+                    data-aos="zoom-in"
+                    data-aos-delay="800"
+                    onclick="suggestTopic('Im feeling anxious today')"
+                    disabled
+                  >
+                    I'm feeling anxious
+                  </button>
+                  <button
+                    class="suggestion-btn"
+                    data-aos="zoom-in"
+                    data-aos-delay="900"
+                    onclick="suggestTopic('Help me with stress management')"
+                    disabled
+                  >
+                    Stress management
+                  </button>
+                  <button
+                    class="suggestion-btn"
+                    data-aos="zoom-in"
+                    data-aos-delay="1000"
+                    onclick="suggestTopic('I need some positive affirmations')"
+                    disabled
+                  >
+                    Positive affirmations
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="input-group mb-1 mt-2">
+            <textarea
+              class="form-control p-3"
+              id="userInput"
+              placeholder="Please login to start chatting..."
+              rows="1"
+              onkeydown="handleKeyPress(event)"
+              disabled
+            ></textarea>
+            <button
+              class="btn btn-light text-white"
+              id="btn-send"
+              onclick="sendMessage()"
+              disabled
+            >
+              Ask!
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div
+      class="modal fade"
+      id="loginModal"
+      tabindex="-1"
+      aria-labelledby="loginModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark text-white">
+          <div class="modal-header border-0">
+            <h5 class="modal-title montserrat_title" id="loginModalLabel">
+              Please Sign-Up
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body text-center">
+            <p class="mb-4">
+              Please sign in with your Google account to continue
+            </p>
+            <div
+              id="g_id_onload"
+              data-client_id="333127477558-u94ej7p6rq2fj02feu5ob2s90uauabhe.apps.googleusercontent.com"
+              data-context="signin"
+              data-callback="handleGoogleSignIn"
+              data-auto_prompt="false"
+            ></div>
+            <div
+              class="g_id_signin"
+              data-type="standard"
+              data-size="large"
+              data-theme="outline"
+              data-text="signin_with"
+              data-shape="rectangular"
+              data-logo_alignment="left"
+              data-width="300"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
